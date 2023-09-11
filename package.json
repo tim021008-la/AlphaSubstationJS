@@ -1,0 +1,20 @@
+{
+  "name": "alphasubstationjs",
+  "version": "1.0.0",
+  "description": "![License](https://img.shields.io/badge/license-MIT-blue.svg)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tim021008-la/AlphaSubstationJS.git"
+  },
+  "author": "tim021008-la",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tim021008-la/AlphaSubstationJS/issues"
+  },
+  "homepage": "https://github.com/tim021008-la/AlphaSubstationJS#readme"
+}
