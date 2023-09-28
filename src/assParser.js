@@ -1,3 +1,6 @@
+import {AssDocument, AssInfo, AssStyle, AssDialogue} from './parsable.js';
+
+
 /**
  * Class for parsing ASS subtitle files
  */
@@ -18,7 +21,13 @@ class AssParser {
      * @returns {Array} The events section body
      */
     getEvents(parsedAss) {
-        return parsedAss[2].body.slice(1);
+        const events = [];
+        const temp = parsedAss[2].body.slice(1)
+        for (let index = 0; index < temp.length; index++) {
+            events[index] = new AssDialogue(temp[index].value);
+
+        }
+        return events;
     }
 
     /**
@@ -26,7 +35,7 @@ class AssParser {
      * @param {Object} parsedAss - The parsed ASS data 
      * @returns {Array} The style section body
      */
-    getStyle(parsedAss) {
+    getStyles(parsedAss) {
         return parsedAss[1].body.slice(1);
     }
 
@@ -91,6 +100,19 @@ class AssParser {
                 });
             }
         }
+
+        /*const infoTag = parsedAss.sections[0].section;
+        const info;
+        const styleTag;
+        const styleFormat;
+        const style;
+        const dialogueTag;
+        const dialogueFormat;
+        const dialogue;*/
+
+
+
+        //const document = new AssDocument()
 
         return parsedAss.sections;
     }

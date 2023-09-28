@@ -59,4 +59,28 @@ class AssStyle {
     }
 }
 
-export { AssDialogue, AssStyle };
+class AssInfo {
+    constructor(line) {
+        this.key = line.key == undefined ? line.type : line.key;
+        this.value = this.value;
+    }
+
+    getValueString() {
+        return this.key == 'comment' ? `; ${this.value}` : `${this.key}: ${this.value}`;
+    }
+}
+
+class AssDocument {
+    constructor(infoTag, info, styleTag, styleFormat, style, dialogueTag, dialogueFormat, dialogue) {
+        this.infoTag = infoTag;
+        this.info = info;
+        this.styleTag = styleTag;
+        this.styleFormat = styleFormat;
+        this.style = style;
+        this.dialogueTag = dialogueTag;
+        this.dialogueFormat = dialogueFormat;
+        this.dialogue = dialogue;
+    }
+}
+
+export {AssDocument, AssInfo, AssStyle, AssDialogue};
